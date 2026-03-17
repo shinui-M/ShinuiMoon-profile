@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 // ── 네비게이션 ────────────────────────────────────────────────
 function Nav() {
   return (
@@ -31,18 +29,6 @@ function Hero() {
   return (
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-10">
-        <div className="shrink-0">
-          <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-2 ring-gray-100">
-            <Image
-              src="/profile.jpg"
-              alt="문신의 프로필 사진"
-              width={144}
-              height={144}
-              className="w-full h-full object-cover object-top"
-              priority
-            />
-          </div>
-        </div>
         <div>
           <p className="text-sm font-medium text-blue-600 mb-2">영남대학교 화학공학부 에너지화공전공 · 4학년</p>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
@@ -180,6 +166,18 @@ function Education() {
 function Research() {
   const items = [
     {
+      period: '2025 ~ 현재',
+      title: '알칼라인 수전해 효율 향상을 위한 전기촉매 개발',
+      org: '영남대학교 화학공학부 · 캡스톤 프로젝트',
+      topic: '전기촉매 소재 합성 및 전기화학 특성 분석',
+      details: [
+        '전기촉매 소재 합성 및 전극 제작',
+        'CV(순환전압전류법), LSV(선형주사전위법), EIS(전기화학 임피던스 분광법) 측정 및 분석',
+        '반응 메커니즘 탐구 및 전극 소재 설계',
+      ],
+      color: 'purple',
+    },
+    {
       period: '2025 여름',
       title: 'DGIST 대학원 하계 연구 인턴십',
       org: 'DGIST 에너지공학과 · 인수일 교수 지도',
@@ -191,18 +189,6 @@ function Research() {
         'OriginPro를 활용한 실험 데이터 시각화 및 분석',
       ],
       color: 'blue',
-    },
-    {
-      period: '2025 ~ 현재',
-      title: '알칼라인 수전해 효율 향상을 위한 전기촉매 개발',
-      org: '영남대학교 화학공학부 · 캡스톤 프로젝트',
-      topic: '전기촉매 소재 합성 및 전기화학 특성 분석',
-      details: [
-        '전기촉매 소재 합성 및 전극 제작',
-        'CV(순환전압전류법), LSV(선형주사전위법), EIS(전기화학 임피던스 분광법) 측정 및 분석',
-        '반응 메커니즘 탐구 및 전극 소재 설계',
-      ],
-      color: 'purple',
     },
   ]
 
@@ -394,12 +380,13 @@ function Activities() {
         </div>
         <div className="flex gap-6">
           <div className="w-32 shrink-0 pt-1">
-            <span className="text-sm font-medium text-blue-600">2024</span>
+            <span className="text-sm font-medium text-blue-600">2025</span>
           </div>
           <div>
             <h3 className="text-base font-semibold text-gray-900">
-              영남대학교 화학공학부 학술동아리 A.H.A — 집행부장
+              영남대학교 Y또! 프로그램 — 멘토
             </h3>
+            <p className="text-sm text-gray-600 mt-1">후배 학생 대상 학업·진로 멘토링 참여</p>
           </div>
         </div>
         <div className="flex gap-6">
@@ -411,6 +398,17 @@ function Activities() {
             <p className="text-sm text-gray-600 mt-1">
               Notion · Obsidian 기반 지식 관리, AI 활용 비즈니스 강연 수강
             </p>
+          </div>
+        </div>
+        <div className="flex gap-6">
+          <div className="w-32 shrink-0 pt-1">
+            <span className="text-sm font-medium text-blue-600">2024</span>
+          </div>
+          <div>
+            <h3 className="text-base font-semibold text-gray-900">
+              영남대학교 화학공학부 학술동아리 A.H.A — 집행부장
+            </h3>
+            <p className="text-sm text-gray-600 mt-1">동아리 운영 전반 보조</p>
           </div>
         </div>
       </div>
@@ -439,12 +437,18 @@ function Certificates() {
       icon: '📄',
       href: '/certificates/toeic.pdf',
     },
+    {
+      title: 'DGIST 인턴 수료증',
+      desc: 'DGIST 에너지공학과 · 2025년 하계',
+      icon: '🏫',
+      href: '/certificates/dgist-intern.pdf',
+    },
   ]
 
   return (
     <section id="certificates" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
       <SectionHeader title="증명서" />
-      <div className="grid sm:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {files.map((f) => (
           <a
             key={f.title}
