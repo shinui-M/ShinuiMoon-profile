@@ -12,6 +12,7 @@ function Nav() {
           <a href="#research" className="hover:text-blue-600">연구</a>
           <a href="#skills" className="hover:text-blue-600">역량</a>
           <a href="#activities" className="hover:text-blue-600">활동</a>
+          <a href="#certificates" className="hover:text-blue-600">증명서</a>
         </nav>
         <a
           href="mailto:msi39670@gmail.com"
@@ -325,6 +326,56 @@ function Activities() {
   )
 }
 
+// ── 증명서 ────────────────────────────────────────────────────
+function Certificates() {
+  const files = [
+    {
+      title: '재학증명서',
+      desc: '영남대학교 · 2026년 1학기',
+      icon: '🎓',
+      href: '/certificates/enrollment.pdf',
+    },
+    {
+      title: '성적증명서',
+      desc: '영남대학교 · 2025년 2학기',
+      icon: '📋',
+      href: '/certificates/transcript.pdf',
+    },
+    {
+      title: 'TOEIC 성적표',
+      desc: '805점 · 2025년 9월 14일',
+      icon: '📄',
+      href: '/certificates/toeic.pdf',
+    },
+  ]
+
+  return (
+    <section id="certificates" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
+      <SectionHeader title="증명서" />
+      <div className="grid sm:grid-cols-3 gap-4">
+        {files.map((f) => (
+          <a
+            key={f.title}
+            href={f.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-200"
+          >
+            <span className="text-3xl">{f.icon}</span>
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
+              <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>
+            </div>
+            <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-500 shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 // ── 푸터 ──────────────────────────────────────────────────────
 function Footer() {
   return (
@@ -349,6 +400,7 @@ export default function Home() {
         <AcademicActivities />
         <Skills />
         <Activities />
+        <Certificates />
       </main>
       <Footer />
     </>
