@@ -318,7 +318,7 @@ function Education() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900">학업성적우수 장학금</h3>
-              <p className="text-gray-600 mt-0.5">전학년 최상위 성적 유지로 매학기 수혜</p>
+              <p className="text-gray-600 mt-0.5">전학년 최상위 성적 유지로 수혜</p>
             </div>
           </div>
         </FadeIn>
@@ -453,7 +453,7 @@ function ResearchInterests() {
     {
       icon: '♻️',
       title: '환경 촉매 / 자원순환',
-      desc: '폐자원(Red mud, 식물 폐기물) 활용 촉매 합성, 온실가스 저감 소재',
+      desc: '폐자원(Red mud) 활용 촉매 합성, 온실가스 저감 소재',
       color: 'teal',
     },
   ]
