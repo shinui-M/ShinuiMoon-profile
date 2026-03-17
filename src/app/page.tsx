@@ -394,6 +394,16 @@ function Activities() {
         </div>
         <div className="flex gap-6">
           <div className="w-32 shrink-0 pt-1">
+            <span className="text-sm font-medium text-blue-600">2024</span>
+          </div>
+          <div>
+            <h3 className="text-base font-semibold text-gray-900">
+              영남대학교 화학공학부 학술동아리 A.H.A — 집행부장
+            </h3>
+          </div>
+        </div>
+        <div className="flex gap-6">
+          <div className="w-32 shrink-0 pt-1">
             <span className="text-sm font-medium text-blue-600">2025</span>
           </div>
           <div>
