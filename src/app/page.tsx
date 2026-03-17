@@ -557,7 +557,7 @@ function Activities() {
       desc: '후배 학생 대상 학업·진로 멘토링 참여',
     },
     {
-      year: '2025',
+      year: '2026',
       title: 'AI 컨퍼런스 참가',
       desc: 'Notion · Obsidian 기반 지식 관리, AI 활용 비즈니스 강연 수강',
     },
