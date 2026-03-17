@@ -39,7 +39,7 @@ The file is marked `"use client"` at the top (required for hooks/interactivity).
 ### Content Editing Pattern
 
 All content is hardcoded inline. To add/edit content:
-- **List-based sections** (`Research`, `Activities`, `AcademicActivities`, `Skills`): edit the data arrays at the top of each component function.
+- **List-based sections** (`Research`, `Activities`, `AcademicActivities`, `Skills`): edit the data arrays at the top of each component function. In `Activities`, items are ordered by year descending — newest year at the top.
 - **Prose sections** (`About`, `Hero`): edit JSX directly.
 - **Nav links**: edit the `NAV_LINKS` array (also add a matching `id` on the section element).
 

@@ -547,6 +547,11 @@ function Skills() {
 function Activities() {
   const items = [
     {
+      year: '2026',
+      title: 'AI시대 인간지능 컨퍼런스 참가',
+      desc: 'Notion · Obsidian 기반 지식 관리, AI 활용 비즈니스 강연 수강',
+    },
+    {
       year: '2025',
       title: '영남대학교 화학공학부 학술동아리 A.H.A — 회장',
       desc: '자체 학술대회 기획 및 진행, 학년 간 멘토링 프로그램 운영',
@@ -555,11 +560,6 @@ function Activities() {
       year: '2025',
       title: '영남대학교 Y또! 프로그램 — 멘토',
       desc: '후배 학생 대상 학업·진로 멘토링 참여',
-    },
-    {
-      year: '2026',
-      title: 'AI 컨퍼런스 참가',
-      desc: 'Notion · Obsidian 기반 지식 관리, AI 활용 비즈니스 강연 수강',
     },
     {
       year: '2024',
