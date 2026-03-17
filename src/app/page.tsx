@@ -92,12 +92,19 @@ function Nav() {
   const active = useActiveSection(NAV_LINKS.map((l) => l.href))
   const progress = useScrollProgress()
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // 메뉴 열릴 때 스크롤 잠금
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   return (
     <header
@@ -130,12 +137,58 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="mailto:msi39670@gmail.com"
-          className="text-sm px-4 py-1.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 active:scale-95 transition-all duration-150"
-        >
-          Contact
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="mailto:msi39670@gmail.com"
+            className="hidden sm:inline-flex text-sm px-4 py-1.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 active:scale-95 transition-all duration-150"
+          >
+            Contact
+          </a>
+          {/* 햄버거 버튼 (모바일) */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="메뉴 열기"
+            className="sm:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            <span
+              className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* 모바일 드롭다운 메뉴 */}
+      <div
+        className={`sm:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ${
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="flex flex-col px-6 py-4 gap-1">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={`#${link.href}`}
+              onClick={() => setMenuOpen(false)}
+              className={`py-2.5 text-sm font-medium border-b border-gray-50 last:border-0 transition-colors ${
+                active === link.href ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="mailto:msi39670@gmail.com"
+            className="mt-3 text-center text-sm px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
       </div>
     </header>
   )
@@ -205,6 +258,25 @@ function Hero() {
               <span className="flex items-center gap-1.5 text-gray-600">
                 <span>📍</span> 경상북도 경산시
               </span>
+            </div>
+          </FadeIn>
+          <FadeIn delay={340}>
+            <div className="flex flex-wrap gap-2 mt-5">
+              {[
+                { label: 'GPA', value: '4.42 / 4.5' },
+                { label: '연구 인턴', value: '1회 (DGIST)' },
+                { label: '학술 발표', value: '2회' },
+                { label: 'TOEIC', value: '805점' },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full shadow-sm text-sm"
+                >
+                  <span className="text-gray-400 font-medium">{stat.label}</span>
+                  <span className="w-px h-3 bg-gray-200" />
+                  <span className="text-blue-700 font-semibold">{stat.value}</span>
+                </div>
+              ))}
             </div>
           </FadeIn>
         </div>
