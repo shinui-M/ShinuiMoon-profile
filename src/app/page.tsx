@@ -10,6 +10,7 @@ function Nav() {
           <a href="#about" className="hover:text-blue-600">소개</a>
           <a href="#education" className="hover:text-blue-600">학력</a>
           <a href="#research" className="hover:text-blue-600">연구</a>
+          <a href="#interests" className="hover:text-blue-600">연구관심사</a>
           <a href="#skills" className="hover:text-blue-600">역량</a>
           <a href="#activities" className="hover:text-blue-600">활동</a>
           <a href="#certificates" className="hover:text-blue-600">증명서</a>
@@ -123,6 +124,30 @@ function Education() {
                 학과 내 최상위 성적
               </span>
             </div>
+            <div className="mt-3 overflow-x-auto">
+              <table className="text-sm text-gray-600 border-collapse">
+                <thead>
+                  <tr className="text-gray-500">
+                    <th className="pr-6 pb-1 font-medium text-left">학년</th>
+                    <th className="pr-6 pb-1 font-medium text-center">1학기</th>
+                    <th className="pb-1 font-medium text-center">2학기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['1학년', '4.33', '4.35'],
+                    ['2학년', '4.42', '4.50'],
+                    ['3학년', '4.50', '—'],
+                  ].map(([grade, s1, s2]) => (
+                    <tr key={grade}>
+                      <td className="pr-6 py-0.5 text-gray-700 font-medium">{grade}</td>
+                      <td className="pr-6 py-0.5 text-center">{s1}</td>
+                      <td className="py-0.5 text-center">{s2}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -160,8 +185,10 @@ function Research() {
       org: 'DGIST 에너지공학과 · 인수일 교수 지도',
       topic: '이산화탄소 전환을 위한 광촉매 개발',
       details: [
-        '소재 합성, 특성 분석, 반응 조건 최적화 전 과정 수행',
-        'UV-Vis, XRD, GC(가스크로마토그래피) 장비 활용',
+        'TiO₂ 기반 광촉매 합성 및 밴드갭 제어를 통한 기능성 향상 연구',
+        'UV-Vis 분광법으로 광흡수 특성 분석, XRD로 결정 구조 규명',
+        'GC(가스크로마토그래피)를 활용한 수소 발생 효율 측정',
+        'OriginPro를 활용한 실험 데이터 시각화 및 분석',
       ],
       color: 'blue',
     },
@@ -245,6 +272,60 @@ function AcademicActivities() {
   )
 }
 
+// ── 연구 관심사 ────────────────────────────────────────────────
+function ResearchInterests() {
+  const interests = [
+    {
+      icon: '💧',
+      title: '그린 수소 생산',
+      desc: '수전해(알칼라인·PEM), CO₂ 환원, 터콰이즈 수소 (암모니아 분해·메탄 열분해)',
+      color: 'blue',
+    },
+    {
+      icon: '⚡',
+      title: '광촉매 및 전기촉매',
+      desc: '밴드 구조 제어, 표면 특성 최적화, 반응 선택성 향상 — TiO₂ 계열 합성 경험 보유',
+      color: 'yellow',
+    },
+    {
+      icon: '🔋',
+      title: '이차전지 소재',
+      desc: '음극재, 폐자원 기반 실리콘 소재, 리튬이온전지 전극 특성 향상',
+      color: 'green',
+    },
+    {
+      icon: '♻️',
+      title: '환경 촉매 / 자원순환',
+      desc: '폐자원(Red mud, 식물 폐기물) 활용 촉매 합성, 온실가스 저감 소재',
+      color: 'teal',
+    },
+  ]
+
+  const colorMap: Record<string, string> = {
+    blue: 'border-blue-400 bg-blue-50/60',
+    yellow: 'border-yellow-400 bg-yellow-50/60',
+    green: 'border-green-400 bg-green-50/60',
+    teal: 'border-teal-400 bg-teal-50/60',
+  }
+
+  return (
+    <section id="interests" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
+      <SectionHeader title="연구 관심사" />
+      <div className="grid sm:grid-cols-2 gap-4">
+        {interests.map((item) => (
+          <div key={item.title} className={`rounded-2xl p-5 border-l-4 ${colorMap[item.color]}`}>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xl">{item.icon}</span>
+              <h3 className="font-semibold text-gray-900">{item.title}</h3>
+            </div>
+            <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 // ── 역량 ──────────────────────────────────────────────────────
 function Skills() {
   const categories = [
@@ -256,7 +337,7 @@ function Skills() {
     {
       title: '실험 기술',
       icon: '🔬',
-      items: ['촉매 합성 (DGIST 인턴십)', 'UV-Vis 분석', 'XRD 분석', 'GC (가스크로마토그래피)'],
+      items: ['TiO₂ 계열 광촉매 합성', 'UV-Vis 분광 분석', 'XRD (결정 구조 규명)', 'GC (수소 발생 효율 측정)', 'OriginPro (데이터 시각화)'],
     },
     {
       title: 'AI / 도구',
@@ -264,9 +345,9 @@ function Skills() {
       items: ['n8n · Make (워크플로우 자동화)', 'Claude Code (웹개발 실습)', 'Notion · Obsidian (지식 관리)'],
     },
     {
-      title: '어학',
+      title: '어학 · 자격',
       icon: '🌐',
-      items: ['TOEIC 805점 (2025)', '학술 논문 독해', '기초 연구 영어 소통'],
+      items: ['TOEIC 805점 (2025)', 'ADsP 데이터분석 준전문가', '학술 논문 독해', '기초 연구 영어 소통'],
     },
   ]
 
@@ -398,6 +479,7 @@ export default function Home() {
         <Education />
         <Research />
         <AcademicActivities />
+        <ResearchInterests />
         <Skills />
         <Activities />
         <Certificates />
