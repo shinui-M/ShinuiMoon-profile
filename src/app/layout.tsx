@@ -1,16 +1,10 @@
 import type { Metadata } from 'next'
-import { AuthProvider } from '@/components/auth/AuthProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '뼈갈단 - 스터디 그룹',
-  description: '뼈를 갈아서라도 성공하자! 함께 성장하는 스터디 그룹',
-  keywords: ['스터디', '공부', '목표', '성장', '뼈갈단'],
-  openGraph: {
-    title: '뼈갈단 - 스터디 그룹',
-    description: '뼈를 갈아서라도 성공하자! 함께 성장하는 스터디 그룹',
-    type: 'website',
-  },
+  title: '문신의 — 포트폴리오',
+  description: '영남대학교 화학공학부 에너지화공전공 문신의의 포트폴리오입니다.',
+  keywords: ['문신의', '화학공학', '에너지', '포트폴리오', '연구'],
 }
 
 export default function RootLayout({
@@ -20,10 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-background">
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+      <body className="min-h-screen bg-white text-gray-900">
+        {children}
       </body>
     </html>
   )
