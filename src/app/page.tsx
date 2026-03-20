@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 // ── 훅: 스크롤 진입 감지 ─────────────────────────────────────
 function useInView(threshold = 0.12) {
@@ -222,6 +223,18 @@ function Hero() {
   return (
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-10">
+        <FadeIn delay={0} className="shrink-0">
+          <div className="w-36 h-44 rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <Image
+              src="/profile.jpg"
+              alt="문신의 증명사진"
+              width={144}
+              height={176}
+              className="w-full h-full object-cover object-top"
+              priority
+            />
+          </div>
+        </FadeIn>
         <div>
           <FadeIn delay={0}>
             <p className="text-sm font-medium text-blue-600 mb-2">
