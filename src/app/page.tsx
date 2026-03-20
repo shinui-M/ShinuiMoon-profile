@@ -224,12 +224,12 @@ function Hero() {
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-10">
         <FadeIn delay={0} className="shrink-0">
-          <div className="w-36 h-44 rounded-2xl overflow-hidden shadow-md border border-gray-100">
+          <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-md border border-gray-100">
             <Image
               src="/profile.jpg"
               alt="문신의 증명사진"
-              width={144}
-              height={176}
+              width={192}
+              height={240}
               className="w-full h-full object-cover object-top"
               priority
             />
