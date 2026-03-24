@@ -686,7 +686,7 @@ function Certificates() {
     { title: '성적증명서', desc: '영남대학교 · 2025년 2학기', icon: '📋', href: '/certificates/transcript.pdf' },
     { title: 'TOEIC 성적표', desc: '805점 · 2025년 9월 14일', icon: '📄', href: '/certificates/toeic.pdf' },
     { title: 'DGIST 인턴 수료증', desc: 'DGIST 에너지공학과 · 2025년 하계', icon: '🏫', href: '/certificates/dgist-intern.pdf' },
-    { title: '장학금 수혜 확인서', desc: '영남대학교학술진흥재단', icon: '🏅', href: '/certificates/scholarship.pdf' },
+    { title: '장학금 수혜 확인서', desc: '', icon: '🏅', href: '/certificates/scholarship.pdf' },
   ]
 
   return (
