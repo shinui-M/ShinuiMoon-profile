@@ -349,7 +349,7 @@ function Education() {
                   GPA 4.42 / 4.5
                 </span>
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 text-sm rounded-full font-medium">
-                  학과 내 최상위 성적
+                  학과 수석
                 </span>
               </div>
               <div className="mt-3 overflow-x-auto">
