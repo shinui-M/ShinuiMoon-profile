@@ -223,7 +223,7 @@ function Hero() {
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-10">
         <FadeIn delay={0} className="shrink-0">
-          <div className="w-40 h-40 rounded-full overflow-hidden shadow-md border-2 border-gray-100">
+          <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-md border border-gray-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/profile.jpg"
