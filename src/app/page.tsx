@@ -217,7 +217,7 @@ function useTypingEffect(text: string, speed = 55) {
 }
 
 function Hero() {
-  const { displayed, done } = useTypingEffect('화학공학 학부 연구자 · 전기화학 / 이차전지 · 대학원 진학 준비', 45)
+  const { displayed, done } = useTypingEffect('화학공학 학부 연구자 · 전기화학 / 이차전지', 45)
 
   return (
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
