@@ -217,7 +217,7 @@ function useTypingEffect(text: string, speed = 55) {
 }
 
 function Hero() {
-  const { displayed, done } = useTypingEffect('에너지 소재 연구자 · 전기화학 / 광촉매 · AI 도구 활용', 45)
+  const { displayed, done } = useTypingEffect('화학공학 학부 연구자 · 전기화학 / 이차전지 · 대학원 진학 준비', 45)
 
   return (
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
@@ -517,7 +517,7 @@ function ResearchInterests() {
     {
       icon: '🔋',
       title: '이차전지 소재 및 전해질',
-      desc: '고체·액체 전해질 설계, 음극재 및 폐자원 기반 실리콘 소재, 리튬이온전지 전극 특성 향상',
+      desc: '음극재, 폐자원 기반 실리콘 소재, 리튬이온전지 전극 특성 향상',
       color: 'green',
     },
     {
