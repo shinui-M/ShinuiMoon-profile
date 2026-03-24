@@ -515,6 +515,12 @@ function AcademicActivities() {
 function ResearchInterests() {
   const interests = [
     {
+      icon: '🔋',
+      title: '이차전지 소재 및 전해질',
+      desc: '고체·액체 전해질 설계, 음극재 및 폐자원 기반 실리콘 소재, 리튬이온전지 전극 특성 향상',
+      color: 'green',
+    },
+    {
       icon: '💧',
       title: '그린 수소 생산',
       desc: '수전해(알칼라인·PEM), CO₂ 환원, 터콰이즈 수소 (암모니아 분해·메탄 열분해)',
@@ -525,12 +531,6 @@ function ResearchInterests() {
       title: '광촉매 및 전기촉매',
       desc: '밴드 구조 제어, 표면 특성 최적화, 반응 선택성 향상 — TiO₂ 계열 합성 경험 보유',
       color: 'yellow',
-    },
-    {
-      icon: '🔋',
-      title: '이차전지 소재',
-      desc: '음극재, 폐자원 기반 실리콘 소재, 리튬이온전지 전극 특성 향상',
-      color: 'green',
     },
     {
       icon: '♻️',
@@ -575,7 +575,7 @@ function Skills() {
     {
       title: '전공 역량',
       icon: '⚗️',
-      items: ['전기화학', '이차전지 및 연료전지', '반응공학', '열역학', '알칼라인 수전해 메커니즘'],
+      items: ['전기화학', '이차전지 및 연료전지', '고체화학', '물리화학', '열역학'],
     },
     {
       title: '실험 기술',
@@ -591,7 +591,7 @@ function Skills() {
     {
       title: 'AI / 도구',
       icon: '🤖',
-      items: ['n8n · Make (워크플로우 자동화)', 'Claude Code (웹개발 실습)', 'Notion · Obsidian (지식 관리)'],
+      items: ['n8n · Make (워크플로우 자동화)', 'Claude Code (웹개발, 프로젝트 파이프라인 제작)', 'Notion · Obsidian (지식 관리)'],
     },
     {
       title: '어학 · 자격',
