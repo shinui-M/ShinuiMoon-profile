@@ -223,7 +223,7 @@ function Hero() {
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-10">
         <FadeIn delay={0} className="shrink-0">
-          <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-md border border-gray-100">
+          <div className="w-40 h-40 rounded-full overflow-hidden shadow-md border-2 border-gray-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/profile.jpg"
@@ -280,11 +280,10 @@ function Hero() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full shadow-sm text-sm"
+                  className="flex flex-col items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm min-w-[72px]"
                 >
-                  <span className="text-gray-400 font-medium">{stat.label}</span>
-                  <span className="w-px h-3 bg-gray-200" />
-                  <span className="text-blue-700 font-semibold">{stat.value}</span>
+                  <span className="text-base font-bold text-blue-700">{stat.value}</span>
+                  <span className="text-xs text-gray-400 font-medium mt-0.5">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -300,7 +299,7 @@ function SectionHeader({ title }: { title: string }) {
   return (
     <FadeIn className="mb-8">
       <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-      <div className="mt-2 w-10 h-1 bg-blue-600 rounded-full" />
+      <div className="mt-2 w-12 h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-400" />
     </FadeIn>
   )
 }
@@ -332,7 +331,8 @@ function About() {
 // ── 학력 ──────────────────────────────────────────────────────
 function Education() {
   return (
-    <section id="education" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
+    <section id="education" className="border-t border-gray-100 bg-gray-50/50">
+      <div className="py-16 px-6 max-w-5xl mx-auto">
       <SectionHeader title="학력 및 수상" />
       <div className="space-y-6">
         {/* 대학교 */}
@@ -405,6 +405,7 @@ function Education() {
           </div>
         </FadeIn>
       </div>
+      </div>
     </section>
   )
 }
@@ -448,8 +449,8 @@ function Research() {
             <div
               className={`rounded-2xl p-6 border-l-4 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 ${
                 item.color === 'blue'
-                  ? 'border-blue-500 bg-blue-50/50 hover:bg-blue-50'
-                  : 'border-purple-500 bg-purple-50/50 hover:bg-purple-50'
+                  ? 'border-blue-500 bg-white shadow-sm hover:bg-blue-50'
+                  : 'border-purple-500 bg-white shadow-sm hover:bg-purple-50'
               }`}
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
@@ -487,7 +488,8 @@ function Research() {
 // ── 학술 활동 ─────────────────────────────────────────────────
 function AcademicActivities() {
   return (
-    <section className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
+    <section className="border-t border-gray-100 bg-gray-50/50">
+      <div className="py-16 px-6 max-w-5xl mx-auto">
       <SectionHeader title="학술 활동" />
       <div className="grid sm:grid-cols-2 gap-4">
         {[
@@ -495,7 +497,7 @@ function AcademicActivities() {
           { year: '2024', title: '한국화학공학회 Chem Frontier', desc: 'Red Mud를 활용한 광촉매 개발 연구 발표' },
         ].map((item, i) => (
           <FadeIn key={item.year + item.desc} delay={i * 100}>
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-250">
+            <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-250">
               <div className="flex items-start justify-between mb-2">
                 <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
                   {item.year}
@@ -506,6 +508,7 @@ function AcademicActivities() {
             </div>
           </FadeIn>
         ))}
+      </div>
       </div>
     </section>
   )
@@ -554,7 +557,7 @@ function ResearchInterests() {
         {interests.map((item, i) => (
           <FadeIn key={item.title} delay={i * 80}>
             <div
-              className={`rounded-2xl p-5 border-l-4 transition-all duration-250 hover:shadow-md hover:-translate-y-0.5 ${colorMap[item.color]}`}
+              className={`rounded-2xl p-4 sm:p-5 border-l-4 transition-all duration-250 hover:shadow-md hover:-translate-y-0.5 ${colorMap[item.color]}`}
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl">{item.icon}</span>
@@ -601,12 +604,13 @@ function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
+    <section id="skills" className="border-t border-gray-100 bg-gray-50/50">
+      <div className="py-16 px-6 max-w-5xl mx-auto">
       <SectionHeader title="역량" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {categories.map((cat, i) => (
           <FadeIn key={cat.title} delay={i * 80}>
-            <div className="bg-gray-50 rounded-2xl p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-250 h-full">
+            <div className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-250 h-full">
               <div className="text-2xl mb-3">{cat.icon}</div>
               <h3 className="font-semibold text-gray-900 mb-3 text-sm">{cat.title}</h3>
               <ul className="space-y-1.5">
@@ -620,6 +624,7 @@ function Skills() {
             </div>
           </FadeIn>
         ))}
+      </div>
       </div>
     </section>
   )
@@ -684,33 +689,35 @@ function Certificates() {
   ]
 
   return (
-    <section id="certificates" className="py-16 px-6 max-w-5xl mx-auto border-t border-gray-100">
-      <SectionHeader title="증명서" />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {files.map((f, i) => (
-          <FadeIn key={f.title} delay={i * 70}>
-            <a
-              href={f.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
-            >
-              <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{f.icon}</span>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
-                <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>
-              </div>
-              <svg
-                className="w-4 h-4 text-gray-400 group-hover:text-blue-500 shrink-0 transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+    <section id="certificates" className="border-t border-gray-100 bg-gray-50/50">
+      <div className="py-16 px-6 max-w-5xl mx-auto">
+        <SectionHeader title="증명서" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {files.map((f, i) => (
+            <FadeIn key={f.title} delay={i * 70}>
+              <a
+                href={f.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-            </a>
-          </FadeIn>
-        ))}
+                <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{f.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>
+                </div>
+                <svg
+                  className="w-4 h-4 text-gray-400 group-hover:text-blue-500 shrink-0 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -747,13 +754,20 @@ function BackToTop() {
 // ── 푸터 ──────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer className="py-10 px-6 border-t border-gray-100 text-center">
-      <p className="text-sm text-gray-400">
-        © 2026 Moon Shinui ·{' '}
-        <a href="mailto:msi39670@gmail.com" className="hover:text-blue-600 transition-colors">
-          msi39670@gmail.com
-        </a>
-      </p>
+    <footer className="py-12 px-6 border-t border-gray-100 bg-gray-50/50">
+      <div className="max-w-5xl mx-auto flex flex-col items-center gap-3">
+        <p className="font-bold text-gray-900 tracking-tight">문신의</p>
+        <div className="flex items-center gap-3 text-sm text-gray-500 flex-wrap justify-center">
+          <a href="mailto:msi39670@gmail.com" className="hover:text-blue-600 transition-colors flex items-center gap-1">
+            <span>✉</span> msi39670@gmail.com
+          </a>
+          <span className="text-gray-300">·</span>
+          <span>010-9900-3967</span>
+          <span className="text-gray-300">·</span>
+          <span>경상북도 경산시</span>
+        </div>
+        <p className="text-xs text-gray-400 mt-1">© 2026 Moon Shinui</p>
+      </div>
     </footer>
   )
 }
