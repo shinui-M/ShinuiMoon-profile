@@ -275,7 +275,7 @@ function Hero() {
               {[
                 { label: 'GPA', value: '4.42 / 4.5' },
                 { label: '연구 인턴', value: '1회 (DGIST)' },
-                { label: '학술 발표', value: '2회' },
+                { label: '학술 대회', value: '2회' },
                 { label: 'TOEIC', value: '805점' },
               ].map((stat) => (
                 <div
