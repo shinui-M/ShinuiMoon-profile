@@ -705,7 +705,9 @@ function Certificates() {
                 <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{f.icon}</span>
                 <div>
                   <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
-                  {f.desc && <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>}
+                  {f.desc && f.desc.split(' · ').map((part, j) => (
+                    <p key={j} className="text-sm text-gray-500 mt-0.5">{part}</p>
+                  ))}
                 </div>
               </a>
             </FadeIn>
