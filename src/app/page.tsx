@@ -693,7 +693,7 @@ function Certificates() {
     <section id="certificates" className="border-t border-gray-100 bg-gray-50/50">
       <div className="py-16 px-6 max-w-5xl mx-auto">
         <SectionHeader title="증명서" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {files.map((f, i) => (
             <FadeIn key={f.title} delay={i * 70}>
               <a
