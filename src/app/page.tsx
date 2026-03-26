@@ -704,8 +704,8 @@ function Certificates() {
               >
                 <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{f.icon}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
-                  <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>
+                  <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors truncate">{f.title}</p>
+                  <p className="text-sm text-gray-500 mt-0.5 truncate">{f.desc}</p>
                 </div>
                 <svg
                   className="w-4 h-4 text-gray-400 group-hover:text-blue-500 shrink-0 transition-colors"
