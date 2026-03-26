@@ -700,21 +700,13 @@ function Certificates() {
                 href={f.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
+                className="group flex flex-col items-center text-center gap-3 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{f.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors truncate">{f.title}</p>
-                  <p className="text-sm text-gray-500 mt-0.5 truncate">{f.desc}</p>
+                <div>
+                  <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{f.title}</p>
+                  {f.desc && <p className="text-sm text-gray-500 mt-0.5">{f.desc}</p>}
                 </div>
-                <svg
-                  className="w-4 h-4 text-gray-400 group-hover:text-blue-500 shrink-0 transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
               </a>
             </FadeIn>
           ))}
