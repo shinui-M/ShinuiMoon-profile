@@ -49,8 +49,11 @@ All content is hardcoded inline. To add/edit content:
 - `public/certificates/transcript.pdf` — 성적증명서
 - `public/certificates/toeic.pdf` — TOEIC 성적표
 - `public/certificates/dgist-intern.pdf` — DGIST 인턴 수료증
+- `public/certificates/scholarship.pdf` — 장학금 수혜 확인서
 
 Certificate filenames are fixed; replace files in-place to update them.
+
+The `Certificates` component renders `desc` split on ` · ` — each segment appears on its own line. Cards use a vertical layout (icon → title → desc lines, center-aligned).
 
 ### Styling
 
